@@ -1,0 +1,18 @@
+{
+  "over_error_code": "E_OVER_QUOTA",
+  "task_error_code": "E_UNKNOWN_TASK",
+  "event_error_code": "E_BAD_EVENT",
+  "capacity": 5,
+  "budget": 1,
+  "state": { "running": {}, "done": [], "cancelled": [], "swept": [], "applied": [] },
+  "events": [
+    { "id": 1, "kind": "start", "task": 1, "cost": 2 },
+    { "id": 2, "kind": "start", "task": 2, "cost": 3 },
+    { "id": 3, "kind": "cancel", "task": 2 },
+    { "id": 4, "kind": "finish", "task": 1 },
+    { "id": 5, "kind": "start", "task": 3, "cost": 2 },
+    { "id": 6, "kind": "cancel", "task": 3 },
+    { "id": 7, "kind": "start", "task": 4, "cost": 1 },
+    { "id": 8, "kind": "finish", "task": 4 }
+  ]
+}
