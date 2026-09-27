@@ -1,8 +1,13 @@
-// quota.js：占用与能不能放行（基线：一律给零与真）
+// quota.js：占用与能不能放行
 export function occupancyOf(running) {
-  return 0;
+  let total = 0;
+  for (const key of Object.keys(running || {})) {
+    const cost = Number(running[key]);
+    if (Number.isFinite(cost)) total += cost;
+  }
+  return total;
 }
 
 export function canFit(running, cost, capacity) {
-  return true;
+  return occupancyOf(running) + cost <= capacity;
 }
